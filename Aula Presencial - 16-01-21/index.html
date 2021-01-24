@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastro do Cliente </title>
+
+</head>
+
+<body>
+
+    <h1> Cadastro de Cliente </h1>
+
+    <button onclick="cadastro()"> Cadastro </button>
+    <br>
+    <p id="nome"> </p>
+    <hr>
+    <p id="dtNasc"> </p>
+    <hr>
+    <p id="idade"> </p>
+    <hr>
+    <p id="telefone"> </p>
+    <hr>
+    <p id="cpf"></p>
+    <hr>
+    <p id="rg"> </p>
+    <hr>
+    <p id="end"> </p>
+    <hr>
+    <p id="email"> </p>
+    <hr>
+    <p id="sexo"> </p>
+    <hr>
+    <p id="sal"> </p>
+    <hr>
+    <p id="empregado"> </p>
+
+    <script>
+        function cadastro() {
+            var nome = prompt("Digite seu nome: ");
+            var dtNasc = prompt("Digite sua data de nascimento: ");
+            var idade = prompt("Digite sua idade: ");
+            var telefone = prompt("Digite seu telefone: ");
+            var cpf = prompt("Digite seu CPF: ");
+            var rg = prompt("Digite seu RG: ");
+            var end = prompt("Digite seu endereço: ");
+            var email = prompt("Digite seu e-mail: ");
+            var sexo = prompt("Digite seu sexo: ");
+            var sal = prompt("Digite seu salário: ");
+            var empregado = prompt("Você está empregado ? ");
+
+            // Imprimir os dados dentro da tag.
+            document.getElementById("nome").innerHTML = "Nome:" + nome;
+            document.getElementById("dtNasc").innerHTML = "Data de Nascimento:" + dtNasc;
+            document.getElementById("idade").innerHTML = "Idade:" + idade;
+            document.getElementById("telefone").innerHTML = "Telefone:" + telefone;
+            document.getElementById("cpf").innerHTML = "CPF:" + cpf;
+            document.getElementById("rg").innerHTML = "RG:" + rg;
+            document.getElementById("end").innerHTML = "Endereço:" + end;
+            document.getElementById("email").innerHTML = "E-mail:" + email;
+            document.getElementById("sexo").innerHTML = "Sexo:" + sexo;
+            document.getElementById("sal").innerHTML = "Salário:" + sal;
+            document.getElementById("empregado").innerHTML = "Empregado ?" + empregado;
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
