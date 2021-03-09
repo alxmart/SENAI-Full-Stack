@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples-Luiz A F Martinez</title>
+</head>
+
+<body>
+  <form name="calcform" method="post" action="">
+    <label for="valor1">Digite o valor <strong>1</strong>:</label>
+    <input type="text" name="valor1" id="valor1">
+
+    <label for="valor2">Digite o valor <strong>2</strong>:</label>
+    <input type="text" name="valor2" id="valor2">
+
+    <label for="oper"> <strong>Selecione a operação</strong>:</label>
+
+<select name="oper" id="oper">
+  <option value="somar"> Somar </option>   
+  <option value="multiplicar"> Multiplicar </option>   
+  <option value="dividir"> Dividir </option>   
+  <option value="subtrair"> Subtrair </option>    
+</select>
+
+<label for="res"> <strong>Resultado</strong>:</label>
+<input type="text" name="res" id="res">
+
+<input type="button" value="Calcular" onClick="calcular(document.calcform.oper.value)"> 
+
+
+  </form>    
+  
+
+</body>
+
+<script>
+
+  function calcular(oper) {
+
+    var valor1 = document.calcform.valor1.value;
+    var valor2 = document.calcform.valor2.value;
+
+    if (oper == "somar") {
+
+       var res = parseInt(valor1) + parseInt(valor2);
+    } else {
+        if (oper == "subtrair") {
+            var res = valor1 -valor2;
+        } else {
+            if (oper == "multiplicar") {
+                var res = valor1 * valor2;
+            } else {
+                var res = valor1 / valor2;
+            }
+        }
+    }
+
+    document.calcform.res.value = res;
+
+  }
+
+</script>
+
+</html>

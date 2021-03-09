@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Idade-Luiz A F Martinez</title>
+</head>
+
+
+
+<body>
+  <form name="calcform" method="post" action="">
+    <label for="valor1">Digite o ano atual:</label>
+    <input type="text" name="valor1" id="valor1">
+
+    <br>
+    <br>
+
+    <label for="valor2">Digite o ano nascimento:</label>
+    <input type="text" name="valor2" id="valor2">
+
+    <br>
+    <br>
+
+    <label for="oper"> <strong>Selecione a operação</strong>:</label>
+
+
+<select name="oper" id="oper">
+   
+  <option value="subtrair"> Subtrair </option>  
+
+</select>
+
+<br>
+<br>
+
+<label for="res"> <strong>Resultado</strong>:</label>
+<input type="text" name="res" id="res">
+
+<input type="button" value="Calcular" onClick="calcular(document.calcform.oper.value)"> 
+
+
+  </form>    
+  
+
+</body>
+
+<script>
+
+  function calcular(oper) {
+
+    var valor1 = document.calcform.valor1.value;
+    var valor2 = document.calcform.valor2.value;
+
+    if (oper == "somar") {
+
+       var res = parseInt(valor1) + parseInt(valor2);
+    } else {
+        if (oper == "subtrair") {
+            var res = parseInt(valor1) - parseInt(valor2);
+        } else {
+            if (oper == "multiplicar") {
+                var res = parseInt(valor1) * parseInt(valor2);
+            } else {
+                var res = parseInt(valor1) / parseInt(valor2);
+            }
+        }
+    }
+
+    document.calcform.res.value = res;
+
+  }
+
+</script>
+
+</html>
