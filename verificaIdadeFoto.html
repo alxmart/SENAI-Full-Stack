@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+</head>
+<body>
+
+    <header>
+      <h1>Verificador de Idade</h1>  
+    </header>
+
+    <section>
+
+       <div>
+
+          <p>
+             Ano de Nascimento:
+             <input type="number" name="txtano" id="txtano" min="0"> 
+          </p>
+
+          <p>
+             Sexo:
+             <input type="radio" name="radsex" checked>
+             <label for="mas">Masculino</label>
+
+             <input type="radio" name="radsex">
+
+
+          <P>
+            <input type="button" value="verificar" onClick="verificar()">
+            
+          </P>
+       </div>
+
+       <div id="res">
+           <p>
+              Preencher os dados acima para ver o resultado 
+           </p>
+
+       </div>
+
+    </section>
+
+    
+</body>
+
+  <script>
+      function verificar() {
+
+          let data = new Date();
+          let ano = data.getFullYear()
+          let fano = document.getElementByID("txtano")
+          let res = document.getElementById("res")  
+      }
+
+
+
+  </script>
+
+</html>

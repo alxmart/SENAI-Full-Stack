@@ -1,0 +1,154 @@
+ Algoritmo "mergeSort"
+
+ Var
+
+   myVec: vetor [1..10] de inteiro
+
+   i: inteiro
+
+   start: inteiro
+   
+   end:inteiro
+
+
+//-------------------------------------------------------------
+// Procedimento 1
+//------------------------------------------------------------
+
+procedimento mergeSort(start, end: inteiro )
+
+  var
+
+  mid:inteiro
+
+  Inicio
+
+    se (start < end) entao
+
+       mid <-(start + end) DIV 2
+
+       mergeSort(start, mid)
+
+       mergeSort(mid +1, end)
+
+       merge(start, mid, end)
+
+    fimse
+
+fimprocedimento
+
+//---------------------------------------------------------------
+// Procedimento 2
+//--------------------------------------------------------------
+
+procedimento merge (start, mid, end: inteiro )
+
+   var
+
+     a,b,c,d:inteiro
+
+     vec: vetor [1..10] de inteiro
+
+   inicio
+
+      a <- start
+      b <- start
+      c <- mid + 1
+      
+
+      enquanto (a <= mid) e (c <= end) faca
+      
+        se myVec[a] <= myVec[c] entao
+        
+           vec[b] <- myVec[a]
+
+           a <- a + 1
+
+        senao
+
+           vec[b] <- myVec[c]
+
+           c <- c + 1
+
+        fimse
+        
+        b <- b + 1
+        
+      fimenquanto
+      
+
+      se a > mid entao
+      
+         Para d de c ate end faca
+
+             vec[b] <- myVec[d]
+
+             b <- b + 1
+
+         fimpara
+
+      senao
+
+         Para d de a ate mid faca
+
+             vec[b] <- myVec[d]
+
+             b <- b + 1
+             
+         fimpara
+
+      fimse
+
+      para d de start ate end faca
+
+         myVec[d] <- vec[d]
+
+      fimpara
+
+fimprocedimento
+
+ //-------------------------------------------------------------------
+
+  Inicio
+
+ //-------------------------------------------------------------------
+ // Entrada de Dados / Preenchimento do Vetor
+ //-------------------------------------------------------------------
+
+  escreval("Digite os valores para preencher o vetor: ")
+  
+  para i de 1 ate 10 passo 1 FACA
+
+    leia (myVec[i])
+
+  fimpara
+  
+  //-----------------------------------------------------------------
+  // Chamada do Procedimento para Classificação
+  //-----------------------------------------------------------------
+
+  start <-1
+
+  end <-10
+  
+  
+  mergeSort(start,end)
+  
+
+  //----------------------------------------------------------------
+  // Apresentação do Vetor Ordenado
+  //----------------------------------------------------------------
+
+  escreval(" ")
+  
+  escreval("Vetor ordenado após MergeSort: ")
+  
+  escreval(" ")
+
+  para i de 1 ate 10 passo 1 FACA
+  
+    escreva (myVec[i])
+
+  fimpara
+          
+fimalgoritmo

@@ -1,0 +1,139 @@
+Algoritmo "SA3 – Atividade 1 – Busca de um usuário pelo nome"
+
+Var
+   // Seção de Declarações das variáveis
+
+   usuario : vetor [1..50, 1..2] de caracter
+   l, c, op, qtdd, x : inteiro
+   resp, nome : caracter
+
+procedimento buscador(procurado : caracter)
+
+inicio
+
+   para l de 1 ate qtdd faca
+      se nome = usuario[l] entao
+
+         x <- l
+
+      fimse
+
+   fimpara
+
+   limpatela
+
+   se (nome = usuario[x,1]) entao
+      Escreval("| NOME DO USUÁRIO    | IDADE DO USUÁRIO   | Nº POSIÇÃO ")
+      Escreval("| ",usuario[x,1]:18," | ",usuario[x,2]:18," | ", x:3)
+
+   senao
+      Escreval("### USUÁRIO NÃO ENCONTRADO ! ###")
+
+   fimse
+
+fimprocedimento
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+
+   repita
+
+      Escreval("### - M E N U   P R I N C I P A L - ###")
+      Escreval("")
+      Escreval("1 - CADASTRAR NOVO USUÁRIO")
+      Escreval("2 - LISTAR USUÁRIOS CADASTRADOS")
+      Escreval("3 - BUSCAR USUÁRIOS PELO NOME")
+      Escreval("4 - ENCERRAR SISTEMA")
+      Escreval("")
+
+      Escreva("DIGITE A OPÇÃO DESEJADA (1-4): ")
+      Leia(op)
+
+      Escolha(op)
+
+         limpatela
+
+      Caso 1
+
+         repita
+
+            limpatela
+            Escreva("INFORME A QUANTIDADE DE USUÁRIOS (1-50): ")
+            leia(qtdd)
+
+            para l de 1 ate qtdd faca
+               para c de 1 ate 2 faca
+
+                  limpatela
+                  Escreval("DIGITE O NOME DO USUÁRIO E IDADE EM SEQUÊNCIA: ",l)
+                  Escreval("NOME DO USUÁRIO (ENTER) | IDADE DO USUÁRIO (ENTER)")
+                  leia(usuario[l,c])
+
+                  limpatela
+
+               fimpara
+            fimpara
+
+            Escreval("USUÁRIO CADASTRADO COM SUCESSO!")
+            Escreva("PRESSIONE (ENTER) PARA RETORNAR AO MENU PRINCIPAL.")
+            leia(resp)
+
+         ate resp = ""
+
+         limpatela
+
+      Caso 2
+
+         repita
+
+            limpatela
+
+            Escreval("| NOME DO USUÁRIO   | IDADE DO USUÁRIO  ")
+
+            para l de 1 ate qtdd faca
+               para c de 1 ate 2 faca
+
+                  Escreva("| ",usuario[l,c]:18)
+
+               fimpara
+               Escreval("")
+
+            fimpara
+
+            Escreval("")
+            Escreva("PRESSIONE (ENTER) PARA RETORNAR AO MENU PRINCIPAL.")
+            leia(resp)
+
+         ate resp = ""
+         limpatela
+
+      Caso 3
+
+         repita
+
+            limpatela
+
+            Escreva("DIGITE O NOME DO USUÁRIO QUE DESEJA PROCURAR: ")
+            leia(nome)
+
+            buscador(nome)
+
+            Escreval("")
+            Escreva("DESEJA PROCURAR UM NOVO USUÁRIO (S/N)?")
+            leia(resp)
+
+            limpatela
+
+         ate resp = "N"
+
+      Caso 4
+
+         limpatela
+         Escreval("O SISTEMA FOI ENCERRADO !!!")
+         Escreval("")
+
+      fimescolha
+
+   ate op = 4
+
+Fimalgoritmo

@@ -1,0 +1,73 @@
+Procedimento MergeSort(inici, fim: inteiro )
+            var
+               meio:inteiro
+            inicio
+               se (inici <  fim) entao
+                  meio<-(inici + fim) DIV 2
+                  MERGESORT (inici, meio)
+                  MERGESORT (meio+1, fim)
+                  MERGE (inici, meio, fim)
+               fimse
+            fimprocedimento
+            
+            
+            procedimento MERGE (inici, meio, fim: inteiro )
+            var
+               h,i,j,k:inteiro
+               b: vetor [1..10] de inteiro
+            inicio
+            
+               h<-inici;
+               i<-inici;
+               j<-meio + 1;
+               enquanto (h<=meio) e (j<=fim) faca
+            
+                  se A[h] <= A[j] entao
+                     B[i]<-A[h];
+                     h<- h + 1;
+                  senao
+                     B[i]<-A[j];
+                     j<- j + 1;
+                  fimse
+                  i<- i + 1;
+               fimenquanto
+               se h > meio entao
+                  Para k de j ate fim faca
+                     B[i]<- A[k];
+                     i<- i + 1;
+                  fimpara
+               senao
+                  Para k de h ate meio faca
+                     B[i]<-A[k];
+                     i<- i + 1;
+                  fimpara
+               fimse
+               para k de inici ate fim faca
+                  A[k]<-B[k];
+               fimpara
+            fimprocedimento
+            
+            
+            Algoritmo "testa-mergesort"
+            
+            var
+               a: vetor [1..10] de inteiro
+               x,inici,fim:inteiro
+            
+            inicio
+               // Seção de Comandos
+            
+               aleatorio 0,30
+            
+               para x de 1 ate 10 faca
+                  leia (a[x])
+               fimpara
+            
+               inici<-1
+               fim<-10
+               MERGESORT(inici, fim )
+            
+               para x de 1 ate 10 faca
+                  escreva (a[x])
+               fimpara
+            fimalgoritmo

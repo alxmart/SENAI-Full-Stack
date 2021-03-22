@@ -1,0 +1,63 @@
+SA3 – Atividade 1 – Busca de um usuário pelo nome
+
+Nesta etapa, você trabalhará com a implementação das estruturas de controle, repetição, estruturas homogêneas e função. O sistema deverá realizar o cadastro dos usuários em uma estrutura homogênea e atender um dos requisitos do cliente que solicita a funcionalidade que permite realizar a busca de um usuário pelo seu nome. Para tanto, deverá ser implementado um algoritmo em pseudocódigo, com as seguintes especificações: 
+
+Implementação de um laço de repetição que solicite as informações do usuário até que seja informado o número 4 para sair do sistema. A cada repetição, apresentar o menu com as seguintes opções:  
+
+1 – Cadastrar novo usuário: solicita as informações do usuário, que são Nome e Idade.;  
+
+2 – Listar todos os usuários cadastrados;  
+
+3 – Buscar usuário pelo nome; 
+
+4 – Sair do sistema: encerra o comando de repetição e encerra o algoritmo.  
+
+ 
+
+Para a implementação da funcionalidade de busca de um usuário pelo nome, é necessário implementar uma função que receba por parâmetro o nome de uma pessoa. Esta função verificará todas as posições da estrutura homogênea até encontrar uma que coincida com o nome passado por parâmetro ou finalizar a pesquisa sem encontrar a pessoa. Ao encontrar, deverá apresentar o nome e a idade da pessoa e retornar a sua posição, caso não encontre deverá retornar -1.  
+
+ Forma de entrega:   
+
+Somente um arquivo com a extensão do VISUALG. Exemplo: atividade_seunome.alg 
+
+Envie sua atividade por meio do botão "Adicionar tarefa". 
+
+ Critérios de avaliação:   
+
+Manutenção da implementação da S.A. anterior funcional. 
+Implementação de menu interativo com as 4 opções solicitadas no enunciado. 
+Implementação de método que recebe o nome de uma pessoa por parâmetro e realiza a busca. 
+O algoritmo deve estar indentado (formatado) e organizado para facilitar a compreensão. 
+O algoritmo deve estar funcionando, portanto, deverá ser testado antes do envio. 
+
+
+
+
+SA3 – Atividade 2 – Presencial – Remover usuário da estrutura de dados
+Agora que você já possui uma função para buscar um usuário pelo nome, você deverá, com ajuda de seus colegas, implementar uma função para remover um usuário da estrutura homogênea. Para tanto, deverá buscar a posição referente a estrutura homogênea pelo nome da pessoa, e caso encontre, deverá remover estas informações da estrutura.
+
+Após realizar a remoção de uma pessoa do cadastro, deverá trazer todas as informações armazenadas em posições posteriores uma posição para trás, a fim de não deixar uma posição em branco entre as informações. Também deverá adicionar mais uma opção no menu, 5 – Remover usuário.
+
+Após selecionar esta opção, deverá ser solicitado o nome do usuário, para caso encontrado, efetivar a sua remoção da estrutura homogênea.
+
+
+
+
+Forma de entrega:  
+
+Formato do Visualg (.ALG) ou software similar (Portugol .POR) 
+
+ 
+
+Critério de Avaliação da Atividade:  
+
+Manutenção das implementações anteriores funcionais. 
+Implementação de um método para realizar a exclusão de uma pessoa pelo nome. 
+Implementação de método que recebe o nome de uma pessoa como parâmetro. 
+Implementação da remoção da pessoa da estrutura homogênea caso encontrar alguma correspondência. 
+Reorganização da estrutura homogênea retornando uma posição das pessoas cadastradas posteriormente a pessoa removida. 
+Adição do menu geral a opção 5 – Remover usuário. 
+Solicitação do nome do usuário para a realização da remoção. 
+Entrega do código fonte do projeto desenvolvido no prazo estabelecido; 
+Geração de comentários explicativos para documentar o código. 
+Implementação do método que não possui tipo de retorno. 

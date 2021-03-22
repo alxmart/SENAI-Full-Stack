@@ -1,0 +1,148 @@
+Algoritmo "FILO"
+// Lógica de Programação
+// Professor   : Astarote
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 12/03/2021
+Var
+   // Seção de Declarações das variáveis
+
+   fila : vetor [0..4] de inteiro
+   cont, op : inteiro
+   entr: inteiro
+   estado : logico
+procedimento menu()
+inicio
+
+   Escreval("### - M E N U  F I L A - ###")
+   Escreval("")
+   Escreval("1. ADICIONAR ")
+   Escreval("2. REMOVER ")
+   Escreval("3. LIMPAR ")
+   Escreval("4. LISTAR ")
+   Escreval("5. VAZIA")
+   Escreval("6. SAIR")
+   Escreval("")
+   Escreva("ESCOLHA UMA OPÇÃO (1-6): ")
+
+fimprocedimento
+
+procedimento aguarda_usuario()
+var
+   n : inteiro
+inicio
+   escreval("")
+   escreva("PRESSIONE (ENTER) PARA CONTINUAR")  //para prosseguir no menu.
+   leia(n)
+   limpatela
+fimprocedimento
+
+procedimento enfileirar(numero : inteiro)
+inicio
+   se cont < 5 entao
+      fila[cont] <- numero
+      cont <- cont + 1
+   senao
+      escreval("ERRO! O LIMITE DA FILA FOI EXCEDIDO!")
+   fimse
+fimprocedimento
+
+procedimento desenf()
+var
+   i : inteiro
+inicio  // procedimento para remover todos os valores inseridos.
+
+   se cont > 0 entao
+      escreval(fila[0])
+      para i de 1 ate 4 faca
+         fila[i-1] <- fila[i]
+      fimpara
+      fila[4] <- 0
+
+      cont <- cont - 1
+   senao  // retorna erro se a fila já estiver vazia.
+      escreval("ERRO! A FILA ESTA VAZIA!")
+   fimse
+fimprocedimento
+
+procedimento limpar()
+var
+   i : inteiro
+inicio     // procedimento limpa todos os valores armazenados.
+   i <- 0
+   para i de 0 ate 4 faca
+      fila[i] <- 0
+   fimpara
+
+   cont <- 0
+fimprocedimento
+
+procedimento listar()
+var
+   i : inteiro
+inicio    // nesta etapa o programa imprime os valores enfileirados
+   i <- 0
+   para i de 0 ate 4 faca
+      escreval(fila[i])
+   fimpara
+fimprocedimento
+
+procedimento vazia()
+inicio
+   se cont = 0 entao
+      estado <- VERDADEIRO// se a fila esta vazia então retorna verdadeiro.
+   senao
+      estado <- FALSO // se houver valor na fila ira retorna falso.
+   fimse
+fimprocedimento
+
+
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   repita
+
+      menu()
+      Leia(op)
+
+      Escolha(op)
+
+      Caso 1
+         limpatela
+         Escreva("DIGITE UM NUMERO PARA ADICIONAR A FILA:")
+         leia(entr)
+         enfileirar(entr)
+         Escreval("NUMERO ADICIONADO A FILA!")
+         aguarda_usuario()
+
+
+      Caso 2
+         limpatela
+         desenf()
+         Escreval("NUMERO REMOVIDO DA FILA!")
+         aguarda_usuario()
+      Caso 3
+         limpatela
+         limpar()
+         Escreval("FILA LIMPA!")
+         aguarda_usuario
+
+      Caso 4
+         limpatela
+         listar()
+         aguarda_usuario
+
+      Caso 5
+         limpatela
+         vazia()
+         Escreval("FILA VAZIA ? ",estado)
+         aguarda_usuario
+      Caso 6
+         limpatela
+         Escreva("SISTEMA ENCERRADO !!!")
+      fimescolha
+
+   ate op = 6
+
+
+Fimalgoritmo

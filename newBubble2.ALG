@@ -2,7 +2,7 @@ Algoritmo "implementarPilha"
 
 // SENAI - 509 - Zerbini - Campinas/SP
 // Curso Desenvolvedor Web Full Stack
-// UC-04, SA-4, Atividade 1 (AVA)-Implementar Pilha
+// UC-04, SA-5, Atividade 1 (AVA)- ORDENAÇÃO / BUBBLESORT
 // Aluno: Luiz Alexandre Ferreira Martinez
 
 
@@ -33,7 +33,7 @@ procedimento empilhar()
   
 //--------------------------------------------------------------------------
 
-  funcao desempilhar(): caractere
+  funcao desempilhar(): inteiro
 
   inicio
   
@@ -82,7 +82,9 @@ procedimento empilhar()
 
      se (tamanho <> 0) Entao
 
-       para i de tamanho - 1 ate 0 passo -1 faca
+         //para i de tamanho - 1 ate 0 passo -1 faca
+         //para i de 0 ate tamanho -1 faca
+         para i de tamanho -1 ate 0 passo -1 faca
          escreval(" ")
          escreval(pilha[i])
        fimpara
@@ -93,6 +95,59 @@ procedimento empilhar()
      fimse
 
   fimprocedimento
+  
+  
+ //---------------------------------------------------------------
+  
+  procedimento ordenar()
+
+  var
+  
+    m,k: inteiro
+    aux: inteiro
+    
+  inicio
+
+  se (tamanho <> 0) Entao
+
+
+    para m de tamanho ate 0 passo -1 faca
+
+       para k de 0 ate m -2  faca
+
+          se (pilha[k] > pilha[k+1]) Entao
+
+             aux <- pilha[k]
+
+             pilha[k]<- pilha[k+1]
+
+             pilha[k+1] <- aux
+
+          fimse
+       fimpara
+    fimpara
+  
+
+
+    escreval("Vetor Ordenado: ")
+    escreval(" ")
+    
+    para i de 0 ate tamanho -1 passo 1 faca
+
+       escreva(pilha[i], " ")
+       escreva(" ")
+
+    fimpara
+
+
+      senao
+         escreval("A pilha esta vazia.")
+
+       fimse
+
+  fimprocedimento
+  
+
 
 //------------------------------------------------------------------------
 
@@ -122,25 +177,25 @@ procedimento empilhar()
 //-------------------------------------------------------------------------
 
 
- pilha: vetor[0..19] de caractere
+ pilha: vetor[0..19] de inteiro
 
  tamanho:inteiro
 
  opcao: inteiro
  
- i: inteiro
+ i,j: inteiro
  
  vlog: logico
  
- retorno: caractere
+ retorno: inteiro
  
- topo: caractere
+ topo: inteiro
  
 
   Inicio
 
 
-    enquanto (opcao <> 6) faca
+    enquanto (opcao <> 7) faca
   
       escreval(" ")
 
@@ -156,8 +211,10 @@ procedimento empilhar()
       escreval("4 - LISTAR (Lista todos os elementos)")
 
       escreval("5 - VAZIA ? (Verifica se a pilha está vazia)")
+      
+      escreval("6 - Fazer Ordenação do Vetor e mostrar ordenado")
     
-      escreval("6 - SAIR (Encerra o programa)")
+      escreval("7 - SAIR (Encerra o programa)")
 
 
       leia(opcao)
@@ -233,6 +290,19 @@ procedimento empilhar()
         vlog <- vazia
     
         escreval(vlog)
+        
+ //-----------------------------------------------------------------
+        
+       caso 6
+
+        escreval(" ")
+        escreval("6-  Fazer ORDENAçÃO do vetor e mostrar ordenado")
+        escreval(" ")
+
+
+        ordenar()
+        
+        
 
 //------------------------------------------------------------------------
 

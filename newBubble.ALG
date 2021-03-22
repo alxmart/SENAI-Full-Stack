@@ -93,6 +93,48 @@ procedimento empilhar()
      fimse
 
   fimprocedimento
+  
+  
+ //---------------------------------------------------------------
+  
+  procedimento ordenar()
+  
+  inicio
+  
+  
+  
+  
+  
+  
+  
+  fimprocedimento
+
+
+
+  //*********************************8
+  
+  
+  
+  
+  
+  inicio
+
+     se (tamanho <> 0) Entao
+
+       para i de tamanho - 1 ate 0 passo -1 faca
+         escreval(" ")
+         escreval(pilha[i])
+       fimpara
+
+     senao
+       escreval("A pilha esta vazia.")
+
+     fimse
+
+  fimprocedimento
+  
+  //***************************************************
+  
 
 //------------------------------------------------------------------------
 
@@ -140,7 +182,7 @@ procedimento empilhar()
   Inicio
 
 
-    enquanto (opcao <> 6) faca
+    enquanto (opcao <> 7) faca
   
       escreval(" ")
 
@@ -156,8 +198,10 @@ procedimento empilhar()
       escreval("4 - LISTAR (Lista todos os elementos)")
 
       escreval("5 - VAZIA ? (Verifica se a pilha está vazia)")
+      
+      escreval("6 - Fazer Ordenação do Vetor e mostrar ordenado")
     
-      escreval("6 - SAIR (Encerra o programa)")
+      escreval("7 - SAIR (Encerra o programa)")
 
 
       leia(opcao)
@@ -233,6 +277,19 @@ procedimento empilhar()
         vlog <- vazia
     
         escreval(vlog)
+        
+ //-----------------------------------------------------------------
+        
+       caso 6
+
+        escreval(" ")
+        escreval("6-  Fazer ORDENAçÃO do vetor e mostrar ordenado")
+        escreval(" ")
+
+
+        ordenar()
+        
+        
 
 //------------------------------------------------------------------------
 

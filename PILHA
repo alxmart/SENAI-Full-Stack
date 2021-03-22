@@ -1,0 +1,107 @@
+Algoritmo "ImplementarPilha"
+
+
+Var
+
+//-----------------------------------------
+//  Variáveis globais da pilha
+//-----------------------------------------
+// vetor -> representa a pilha
+//
+// tamanho -> é o tamnho da pilha
+//--------------------------------------
+
+   pilha: vetor[0..4] de inteiro
+  
+  tamanho:inteiro
+  
+ //--------------------------------------------------------------------
+// ADICIONAR um elemento na Pilha
+//--------------------------------------------------------------------
+//
+//   var tamanho -> definir a posicao do vetor ao qual devera ser
+// adicionado o elemento.
+//
+//   variavel tamanho inicia em 0, primeiro adiciona o elemento e
+// depois incrementa o valor.
+//
+//    Devera verificar espaco na pilha / nao adicionar em pos inexistente
+//------------------------------------------------------------------------
+
+  procedimento inserir()
+
+  inicio
+  
+    se tamanho = 5 entao
+    
+    
+      escreval("A pilha está cheia.")
+      
+    senao
+
+      escreval("Digite o valor que deseja inserir na pilha.")
+
+      leia(pilha[tamanho])
+
+      tamanho <- tamanho + 1
+
+    fimse
+    
+  fimprocedimento
+
+//---------------------------------------------------------------------
+// REMOVER um elemento da Pilha
+//---------------------------------------------------------------------
+//
+// Retorna o valor removido.
+//
+// var tamnho -> sempre a frente 1 numero a frente da ultima posicao ocupada.
+//
+// 1) Decrementa o tamanho da lista.
+// 2) Obter o valor do vetor com base no índice
+//
+// Deve-se verificar se existwe agum elemento na lista antes de remover
+//
+//-----------------------------------------------------------------------
+
+
+  funcao remover(): inteiro
+  
+  inicio
+    se tamanho > 0 entao
+    
+         tamanho <- tamanho -1
+         
+          retorne pilha[tamanho]
+    senao
+    
+         escreval("Pilha Vazia")
+         
+         retorne -1
+         
+    fimse
+  
+  fimfuncao
+
+//------------------------------------------------------------------------
+//
+//  B)LIMPAR  -  Esvaziar a Pilha:
+//     => Definir o tamnaho da pilha como 0 .
+//        (O que define o topo da pilha é o seu tamnho, não os valores..
+//
+//------------------------------------------------------------------------
+//
+//  C) LISTAR - todos os elementos da Pilha:
+//     => Usar um comando derepeticao p/ passar por todos os elementos do vetor
+//       até o valor do tamanho.
+//-------------------------------------------------------------------------
+//  A) VAZIA  -  ?  Verificar se a pilha esta vazia:
+//
+//    => Comparar o tamanho da pilha com o valor 0
+//
+//------------------------------------------------------------------------
+
+Inicio
+
+
+Fimalgoritmo
